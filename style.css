@@ -1,0 +1,22 @@
+body {
+  background: ivory;
+}
+
+canvas {
+  border 1 px solid black;
+  position: relative;
+  left:400px;
+  bakcground:green;
+}
+
+h1 {
+  position: relative;
+  top:-307px;
+  left:100px;
+}
+
+button {
+  position:relative;
+  top:-282px;
+  left:145px;
+}
