@@ -20,6 +20,8 @@ var block = {
 };
 
 //rock variables
+var drop = new Image(); // Create new img element
+drop.src = 'img/drop.jpg';
 var rockWidth = 15;
 var rockHeight = 15;
 var totalRocks = 10;
@@ -42,7 +44,7 @@ function addRock() {
 function resetRock(rock) {
   rock.x = Math.random() * (canvas.width - rockWidth);
   rock.y = 15 + Math.random() * 30;
-  rock.speed = 3 + Math.random() * 0.5;
+  rock.speed = 7 + Math.random() * 0.5;
 }
 
 
@@ -83,11 +85,17 @@ function animate() {
     if (isColliding(rock, block)) {
       score -= 10;
       resetRock(rock);
+
+      if (score <= 0) {
+        continueAnimating = false;
+        alert("game over");
+      }
+
+
+
     }
 
-    //rocks moving down
-    console.log("rock start is:" + rock.y);
-    console.log("rock speed is:" + rock.speed);
+    //rocks moving downs
     rock.y += rock.speed;
 
 
@@ -108,7 +116,7 @@ function isColliding(a, b) {
 
 function drawAll() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "green";
+  ctx.fillStyle = "#FFB36C";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   //hero
@@ -121,11 +129,11 @@ function drawAll() {
   for (var i = 0; i < rocks.length; i++) {
     var rock = rocks[i];
     ctx.fillstyle = "black";
-    ctx.fillRect(rock.x, rock.y, rock.width, rock.height);
+    ctx.drawImage(drop, rock.x, rock.y, rock.width, rock.height);
   }
 
   //Score menu
-  ctx.font = "14px Arial";
+  ctx.font = "20px Monoton";
   ctx.fillStyle = "black";
   ctx.fillText("Score: " + score, 10, 15);
 }

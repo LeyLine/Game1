@@ -1,22 +1,35 @@
 body {
-  background: ivory;
+  background-image: url("img/pink.jpg");
 }
 
 canvas {
-  border 1 px solid black;
+  border: 18px ridge pink;
   position: relative;
-  left:400px;
-  bakcground:green;
+  left:462px;
+  background:#D0A171;
+  border-radius: 6px;
 }
 
 h1 {
   position: relative;
-  top:-307px;
-  left:100px;
+  top:-506px;
+  left:23px;
+  font-family: 'Monoton',cursive;
+  height: 100px;
+  width: 36%;
+  font-size: 248%;
 }
 
 button {
+  border: 7px solid #cc33ff;
   position:relative;
-  top:-282px;
-  left:145px;
+  top:-455px;
+  left:24px;
+  font-size: 231%;
+  background-image: url("img/pink.jpg");
+  color: #cc33ff;
+  border-radius: 18px;
+  height: 67px;
+  width: 19%;
+
 }
