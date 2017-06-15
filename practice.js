@@ -8,9 +8,11 @@ var continueAnimating = false;
 var score;
 
 //block variables
-var blockWidth = 30;
-var blockHeight = 15;
-var blockSpeed = 20;
+var gem = new Image(); // Create new img element
+gem.src = 'img/diamond.png';
+var blockWidth = 35;
+var blockHeight = 35;
+var blockSpeed = 55;
 var block = {
   x: 0,
   y: canvas.height - blockHeight,
@@ -21,7 +23,7 @@ var block = {
 
 //rock variables
 var drop = new Image(); // Create new img element
-drop.src = 'img/drop.jpg';
+drop.src = 'img/drop.png';
 var rockWidth = 15;
 var rockHeight = 15;
 var totalRocks = 10;
@@ -53,11 +55,11 @@ document.onkeydown = function(event) {
   if (event.keyCode === 39) {
     event.preventDefault();
     block.x += block.blockSpeed;
-    if (block.x >= canvas.width - block.width) {
+    if (block.x === canvas.width - block.width) {
       continueAnimating = false;
       alert("Game Over " + score);
     }
-  } else if (event.keyCode == 37) {
+  } else if (event.keyCode === 37) {
     event.preventDefault();
     block.x -= block.blockSpeed;
     if (block.x <= 0) {
@@ -120,10 +122,7 @@ function drawAll() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   //hero
-  ctx.fillStyle = "orange";
-  ctx.fillRect(block.x, block.y, block.width, block.height);
-  ctx.strokeStyle = "yellow";
-  ctx.strokeRect(block.x, block.y, block.width, block.height);
+  ctx.drawImage(gem, block.x, block.y, block.width, block.height);
 
   //rocks
   for (var i = 0; i < rocks.length; i++) {
