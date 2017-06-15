@@ -55,7 +55,7 @@ document.onkeydown = function(event) {
   if (event.keyCode === 39) {
     event.preventDefault();
     block.x += block.blockSpeed;
-    if (block.x >= canvas.width - block.width) {
+    if (block.x + block.width >= canvas.width) {
       continueAnimating = false;
       alert("Game Over " + score);
     }
@@ -63,8 +63,7 @@ document.onkeydown = function(event) {
     event.preventDefault();
     block.x -= block.blockSpeed;
     if (block.x <= 0) {
-      block.x = 0;
-      if (block.x <= canvas.width - block.width) {
+      if (block.x + block.width <= canvas.width) {
         continueAnimating = false;
         alert("Game Over" + score);
       }
