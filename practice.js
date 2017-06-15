@@ -55,11 +55,11 @@ document.onkeydown = function(event) {
   if (event.keyCode === 39) {
     event.preventDefault();
     block.x += block.blockSpeed;
-    if (block.x === canvas.width - block.width) {
+    if (block.x >= canvas.width - block.width) {
       continueAnimating = false;
       alert("Game Over " + score);
     }
-  } else if (event.keyCode === 37) {
+  } else if (event.keyCode == 37) {
     event.preventDefault();
     block.x -= block.blockSpeed;
     if (block.x <= 0) {
