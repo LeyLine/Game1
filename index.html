@@ -3,6 +3,7 @@
 
 
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
   <meta charset="utf-8">
@@ -11,14 +12,29 @@
 </head>
 
 <body>
-  <canvas id="practice" height="500" width="500"></canvas>
+
+  <canvas id="practice" height="500" width="445"></canvas>
   <h1> RAIN DROP </h1>
-  <h2> Drop Top </h2>
+  <h2> Drop Top! </h2>
 
   <button id="start">Start Game</button>
 
-  <img class="Migos" src="img/Migos.jpg" alt="Migos" height="270" width="450">
+  <img class="Migos" src="img/Migos.gif" alt="Migos" height="353" width="450">
 
+  <p class="instructions"> Use the left and right arrows to avoid the falling rain drops! </p>
+  <p class="topinst"> Instructions </p>
+
+  <audio class="song" controls autoplay>
+  <source src="migosSong.mp3" type="audio/mp3">
+  </audio>
+
+  <div id="image" class="hidden">
+
+    <p class="gameOver"> Game Over! </p>
+    <p class="gotwo"> You're too bad and too bougee</p>
+    <button id='replay'>REPLAY</button>
+
+  </div>
 
 
   <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>

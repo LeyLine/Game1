@@ -2,10 +2,18 @@
 var canvas = document.getElementById('practice');
 var ctx = canvas.getContext('2d');
 
+// buffers automatically when created
+
 //game variables
-var startingScore = 50;
+var startingScore = 100;
 var continueAnimating = false;
-var score;
+var score = 0;
+
+var glass = new Audio();
+glass.src = "glass.mp3";
+
+var drop = new Audio();
+drop.src = "drop.mp3";
 
 //block variables
 var gem = new Image(); // Create new img element
@@ -28,6 +36,8 @@ var rockWidth = 15;
 var rockHeight = 15;
 var totalRocks = 10;
 var rocks = [];
+
+
 
 for (var i = 0; i < totalRocks; i++) {
   addRock();
@@ -52,21 +62,17 @@ function resetRock(rock) {
 
 //Moving hero left and right
 document.onkeydown = function(event) {
-  if (event.keyCode === 39) {
-    event.preventDefault();
+  if (event.keyCode == 39) {
     block.x += block.blockSpeed;
-    if (block.x + block.width >= canvas.width) {
-      continueAnimating = false;
-      alert("Game Over " + score);
+    if (block.x >= canvas.width - block.width) {
+      block.x = canvas.width - block.width;
+      glass.play();
     }
   } else if (event.keyCode == 37) {
-    event.preventDefault();
     block.x -= block.blockSpeed;
     if (block.x <= 0) {
-      if (block.x + block.width <= canvas.width) {
-        continueAnimating = false;
-        alert("Game Over" + score);
-      }
+      block.x = 0;
+      glass.play();
     }
   }
 };
@@ -87,9 +93,10 @@ function animate() {
       score -= 10;
       resetRock(rock);
 
+
       if (score <= 0) {
         continueAnimating = false;
-        alert("game over");
+        $("#image").toggleClass("hidden");
       }
 
 
@@ -146,6 +153,10 @@ $("#start").click(function() {
     continueAnimating = true;
     animate();
   }
+});
+
+$("#replay").click(function() {
+  $("#image").toggleClass("hidden");
 });
 
 drawAll();

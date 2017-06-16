@@ -1,5 +1,6 @@
 body {
   background-image: url("img/pink.jpg");
+
 }
 
 canvas {
@@ -8,6 +9,7 @@ canvas {
   left:462px;
   background:#D0A171;
   border-radius: 6px;
+s
 
 }
 
@@ -18,37 +20,124 @@ h1 {
   font-family: 'Monoton',cursive;
   height: 100px;
   width: 62%;
-  font-size: 445%;
+  font-size: 407%;
   color: #792496;
 }
 
-button {
-  border: 14px ridge #cc33ff;
+#start {
+  border: 10px ridge #cc33ff;
   position:relative;
-  top:-1004px;
-  left:1016px;
+  top:-1158px;
+  left:971px;
   font-size: 231%;
   background-image: url("img/pink.jpg");
   color: #cc33ff;
   height: 82px;
   width: 19%;
+  font-weight: bold;
+  background: #ffc877;
 
 }
 
 h2 {
   position: relative;
   top:-662px;
-  left:28px;
+  left:61px;
   font-family: 'Rock Salt', cursive;;
   height: 100px;
   width: 36%;
-  font-size: 338%;
+  font-size: 271%;
   color: #dbc234;
 }
 
 .Migos {
   position:relative;
-  top: -669px;
-  left:-242px;
+  top: -681px;
+  left:-247px;
+}
+
+.instructions{
+  color: #cc33ff;
+  height: 229px;
+  width: 19%;
+  position:relative;
+  top:-1086px;
+  left:951px;
+  font-size: 218%;
+  border: 7px ridge #cc33ff;
+  border-radius: 5px;
+  padding-left: 19px;
+  padding-right: 26px;
+  padding-top: 8px;
+  margin-top: 10px;
+  background:#ffc877;
+  font-weight: bold;
+}
+
+.topinst {
+  color: #cc33ff;
+height: 49px;
+  width: 216px;
+position:relative;
+top:-1440px;
+  left:950px;
+font-size: 231%;
+border: 6px ridge #cc33ff;
+border-radius: 5px;
+padding-left:50px;
+padding-right: 19px;
+  background:#ffc877;
+  font-weight: bold;
+}
+
+.song {
+  position: relative;
+  top: -1175px;
+  left: 957px;
+}
+
+#image {
+  width: 400px;
+  height: 400px;
+  background: #cc33ff;
+  text-align: center;
+  position: absolute;
+  left: calc(50% - 200px);
+  top: calc(50% - 250px);
+  transition: all 0.5s;
+  border: 20px ridge #ffc877;
+  border-radius: 5px;
+
+}
+
+
+#image.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.gameOver {
+  position: relative;
+  top: 16px;
+  left: -1px;
+  font-size: 342%;
+  font-weight: bold;
+  font-family: 'Righteous', cursive;
+  color:white;
+
+
+}#replay{
+  border: 10px ridge #ffc877;
+font-size: 231%;
+font-weight: bold;
+
+
+}
+
+.gotwo {
+  font-size: 200%;
+  font-weight: bold;
+  font-family: 'Righteous', cursive;
 
 }
